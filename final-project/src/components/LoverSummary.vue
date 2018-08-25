@@ -9,7 +9,19 @@
 </template>
 
 <script>
-import axios from 'axios';
+
+	export default {
+	  name: 'LoverSummary',
+	  components: {
+	    
+	  },
+	  data () {
+	    return {
+	      
+	    }
+	  }
+	}
+
 
 
 methods: {
