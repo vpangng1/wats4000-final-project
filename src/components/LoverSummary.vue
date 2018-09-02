@@ -22,10 +22,7 @@
       </form>
     </div>
 
-    <div v-show="!showForm" class="success-message">
-      <h1>Thank you for signing up!</h1>
-      <p>Please click here to see the results! <router-link to="/LoverResults">Click here</router-link></p>
-   </div>
+
   </div>
 
 
@@ -42,14 +39,13 @@ export default {
       personOne: '',
       personTwo: '',
       showForm: true,
-      showError: false
+      //showError: false
     }
   },
   methods: {
     validateForm: function () {
       if ((this.personOne != '') && (this.personTwo != '')){
       console.log('Form is valid');
-      this.showForm = false;
       this.$router.push('LoverResults')
       } else {
       console.log('Form is NOT valid');
