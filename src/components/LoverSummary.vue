@@ -21,6 +21,11 @@
         <p><input type="submit" value="Calculate Love Compatibility"></p>
       </form>
     </div>
+
+    <div v-show="!showForm" class="success-message">
+      <h1>Thank you for signing up!</h1>
+      <p>Please click here to see the results! <router-link to="/LoverResults">Click here</router-link></p>
+   </div>
   </div>
 
 
@@ -28,6 +33,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Home',
   data () {
@@ -43,6 +50,7 @@ export default {
       if ((this.personOne != '') && (this.personTwo != '')){
       console.log('Form is valid');
       this.showForm = false;
+      this.$router.push('LoverResults')
       } else {
       console.log('Form is NOT valid');
       this.showError = true;
@@ -50,6 +58,14 @@ export default {
       console.log('validating form...')
 
     }
+  },
+    findLove: function(){
+    axios.get('https://love-calculator.p.mashape.com/getPercentage', {
+      params: {
+        fname: '',
+        sname: ''
+      }
+    })
   }
 }
 </script>
