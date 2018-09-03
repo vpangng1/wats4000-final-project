@@ -3,7 +3,7 @@
     <div v-show="showForm" class="form-container">
       <h1>Love Calculator</h1>
       <p v-show="showError" class="error">There are errors in your form. Please try again.</p>
-      <form v-on:submit.prevent="validateForm">
+      <form v-on:submit.prevent="findLove">
 
         <p><label for="personOne">
         <input type="text" id="personOne" v-model="personOne" placeholder="Enter your full name">
@@ -18,8 +18,9 @@
     </div>
 
     <div v-show="!showForm" class="success-message">
-      <lover-results></lover-results>
+      <lover-results v-bind:loveResults="loveResults"></lover-results>
     </div>
+    
   </div>
 </template>
 
@@ -35,7 +36,9 @@ export default {
       personOne: '',
       personTwo: '',
       showForm: true,
-      showError: false
+      showError: false,
+      percentage: '',
+      result: ''
     }
   },
   methods: {
@@ -55,12 +58,16 @@ export default {
     axios.get('https://love-calculator.p.mashape.com/getPercentage', {
       api_key: 'SHNlQk5A0umshAPSGGbcNoi8hu9yp1abuwwjsn8zZG7MTpLj1C',
       params: {
-        fname: '',
-        sname: '',
-        percentage: '',
-        result: ''
+        fname: this.personOne,
+        sname: this.personTwo,
       }
     })
+      .then(response => {
+        this.percentage = response.data
+      })
+      .catch(error => {
+        this.errors.push(error)
+      });
   },
   components: {
     'lover-results': LoverResults

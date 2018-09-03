@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'LoverResults',
+    name: 'loveResults',
     data () {
       return {
         message: 'The Results are In'
