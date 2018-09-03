@@ -1,4 +1,5 @@
 <template>
+
   <div class="secret">
     <h1>{{message}}</h1>
     <ul>
@@ -9,12 +10,13 @@
 
 <script>
 export default {
-  name: 'Home',
-  data () {
-    return {
-      message: 'stuff'
+    name: 'LoverResults',
+    data () {
+      return {
+        message: 'The Results are In'
+        
+      }
     }
-  },
 }
 </script>
 
