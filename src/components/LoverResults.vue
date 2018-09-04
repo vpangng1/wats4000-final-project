@@ -2,9 +2,7 @@
 
   <div class="secret">
     <h1>{{message}}</h1>
-    <ul>
-    <li><router-link to="/">Back to Love Calculator</router-link></li>
-    </ul>
+
   </div>
 </template>
 
