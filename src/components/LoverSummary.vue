@@ -17,9 +17,9 @@
       </form>
     </div>
 
-    <div v-show="!showForm" class="success-message">
+   <!-- <div v-show="!showForm" class="success-message"> -->
       <lover-results v-bind:loveResults="loveResults"></lover-results>
-    </div>
+   <!-- </div> -->
     
   </div>
 </template>
@@ -54,10 +54,10 @@ export default {
 
     }
   },
-   findLove: function(){
+   findLove: function() {
     axios.get('https://love-calculator.p.mashape.com/getPercentage', {
-      api_key: 'SHNlQk5A0umshAPSGGbcNoi8hu9yp1abuwwjsn8zZG7MTpLj1C',
       params: {
+        api_key: 'SHNlQk5A0umshAPSGGbcNoi8hu9yp1abuwwjsn8zZG7MTpLj1C',
         fname: this.personOne,
         sname: this.personTwo,
       }
