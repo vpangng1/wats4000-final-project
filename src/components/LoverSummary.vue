@@ -17,10 +17,12 @@
       </form>
     </div>
 
-   <!-- <div v-show="!showForm" class="success-message"> -->
+
     <lover-results v-bind:loveResults="loveResults"></lover-results>
 
-   <!-- </div> -->
+    <h3>Love Compatibility Rating: {{ percentage }}</h3>
+
+
 
     <p>Learn About the Love Calculator! <router-link to="/LoverProfile">Click here</router-link></p>
     

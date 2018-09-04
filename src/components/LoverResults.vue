@@ -11,7 +11,7 @@ export default {
     name: 'loveResults',
     data () {
       return {
-        message: 'The Results are In'
+        message: 'The Results are In:'
         
       }
     }
